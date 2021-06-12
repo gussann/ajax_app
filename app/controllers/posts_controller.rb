@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   # end
 
   def create
-    Post.create(content: params[:content])
-    redirect_to action: :index # 追記する(実装準備)
+    post = Post.create(content: params[:content])
+    render json:{ post: post}
   end
 end
